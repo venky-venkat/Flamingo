@@ -1,0 +1,334 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<style>
+    .countrytext {
+        display: inline-block;
+        vertical-align: top;
+        margin: 0;
+    }
+    .clr{
+        color: green;
+    }
+
+    .word {
+        position: absolute;
+       
+        opacity: 0;
+    }
+
+    .letter {
+        display: inline-block;
+        position: relative;
+        float: left;
+        transform: translateZ(25px);
+        transform-origin: 50% 50% 25px;
+        color:green;
+    }
+
+        .letter.out {
+            transform: rotateX(90deg);
+            transition: transform 0.32s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            
+        }
+
+        .letter.behind {
+            transform: rotateX(-90deg);
+        }
+
+        .letter.in {
+            transform: rotateX(0deg);
+            transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+   
+    
+
+</style>
+@section top3boxes
+{
+    <section class="box-area pb-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="single-box bg-1">
+                        <i class="flaticon-statistics"></i>
+                        <h3>Mission</h3>
+                        <p>To guide, mentor, and assure aspirants with the right abroad education choices and helping them to grow faster</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="single-box bg-2">
+                        <i class="flaticon-creativity"></i>
+                        <h3>Vision</h3>
+                        <p>
+
+                            To transform your aspirations into reality with prominent career growth.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+}
+@section aboutus{
+    <section class="about-us-area pb-95">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="about-title">
+                        
+                        <h2>What do we do?</h2>
+                        <p align="justify">Flamingoes abroad education consulting services will help aspirants right from the profile analysis to post-arrival assistance. Here is our transparent and efficient 6-phase approach in transforming your aspirations into reality. </p>
+                        <ul class="mb-0">
+                            <li>
+                                <i class="flaticon-right-arrow"></i>
+                                Student profile analysis
+                            </li>
+                            <li>
+                                <i class="flaticon-right-arrow"></i>
+                                Career counseling
+                            </li>
+                            <li>
+                                <i class="flaticon-right-arrow"></i>
+                                University & course selection assistance
+                            </li>
+                            <li>
+                                <i class="flaticon-right-arrow"></i>
+                                Application & admission assistance
+                            </li>
+                            <li>
+                                <i class="flaticon-right-arrow"></i>
+                                Financial aid
+                            </li>
+                            <li>
+                                <i class="flaticon-right-arrow"></i>
+                                Pre-departure assistance & post-arrival assistance
+                            </li>
+                        </ul>
+                        <a class="default-btn" href="~/About/index">Discover More</a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="row align-items-center">
+                        <div class="col-lg-12">
+                            <div class="contact-form">
+                                <form id="contactForm">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <input type="text" name="name" id="name" class="form-control" required data-error="Please enter your name" placeholder="Your Name">
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <input type="email" name="email" id="email" class="form-control" required data-error="Please enter your email" placeholder="Your Email">
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <input type="text" name="phone_number" id="phone_number" required data-error="Please enter your number" class="form-control" placeholder="Your Phone">
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <input type="text" name="msg_subject" id="msg_subject" class="form-control" required data-error="Please enter your subject" placeholder="Your Subject">
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <textarea name="message" class="form-control" id="message" cols="30" rows="5" required data-error="Write your message" placeholder="Your Message"></textarea>
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-12">
+                                            <button type="submit" class="default-btn btn-two">
+                                                <span class="label">Send Message</span>
+                                                <i class='bx bx-plus'></i>
+                                            </button>
+                                            <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+}
+
+@section slides{
+    <section class="hero-slider-area">
+        <div class="hero-slider owl-carousel owl-theme">
+            <div class="hero-slider-item slider-item-bg-2">
+                <div class="d-table">
+                    <div class="d-table-cell">
+                        <div class="container">
+                            <div class="hero-slider-text">
+                                <span></span>
+                                <h1>
+                                    Give yourself a bright abroad career with
+                                    <span>Flamingoes</span>
+                                </h1>
+                                <p>We help you for getting success</p>
+                                <div class="banner-button">
+                                    <a class="default-btn" href="/book-table.html">
+                                        Let's Start
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slider-item slider-item-bg-1">
+                <div class="d-table">
+                    <div class="d-table-cell">
+                        <div class="container">
+                            <div class="hero-slider-text">
+                                <span></span>
+                                <h1>Gateway to global learning and career<span>opportunities</span></h1>
+                                <p>We help you for getting success</p>
+                                <div class="banner-button">
+                                    <a class="default-btn" href="/book-table.html">
+                                        Let's Start
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @*<div class="shape shape-1">
+            <img src="/assets/img/shape/1.png" alt="Shape">
+        </div>
+        <div class="shape shape-3">
+            <img src="/assets/img/shape/3.png" alt="Shape">
+        </div>
+        <div class="shape shape-4">
+            <img src="/assets/img/shape/4.png" alt="Shape">
+        </div>
+        <div class="shape shape-5">
+            <img src="/assets/img/shape/5.png" alt="Shape">
+        </div>
+        <div class="shape shape-6">
+            <img src="/assets/img/shape/6.png" alt="Shape">
+        </div>
+        <div class="shape shape-7">
+            <img src="/assets/img/shape/7.png" alt="Shape">
+        </div>
+        <div class="shape shape-8">
+            <img src="/assets/img/shape/1.png" alt="Shape">
+        </div>*@
+    </section>
+}
+@section bestservices
+{
+    <section class="team-area pt-100 pb-70">
+        <div class="container">
+            <div class="section-title">
+
+                <h2 class="countrytext">Study in</h2>
+                <h2 class="countrytext clr">
+                    <span class="word wisteria clr">USA</span>
+                    <span class="word belize">UK</span>
+                    <span class="word pomegranate">Australia</span>
+                    <span class="word green">Canada</span>
+                    <span class="word midnight">New Zealand</span>
+                    <span class="word midnight">Swedan</span>
+                    <span class="word midnight">Germany</span>
+                    <span class="word midnight">Netherlands</span>
+                    <span class="word midnight">Switzerland</span>
+                    <span class="word midnight">France</span>
+                    <span class="word midnight">Singapore</span>
+                    <span class="word midnight">Poland</span>
+                    <span class="word midnight">Ireland</span>
+                    <span class="word midnight">Dubai</span>
+                    <span class="word midnight">Italy</span>
+                    <span class="word midnight">Austria</span>
+                    <span class="word midnight">Finland</span>
+                    <span class="word midnight">CZech Republic</span>
+                    <span class="word midnight">Cyprus</span>
+                    <span class="word midnight">Hungary</span>
+                </h2>
+                <h5 align="center">Plan a successful career across the globe</h5>
+            </div>
+            
+            @Html.Partial("_MainCountries")
+            <script id="rendered-js">
+                var words = document.getElementsByClassName('word');
+                var wordArray = [];
+                var currentWord = 0;
+
+                words[currentWord].style.opacity = 1;
+                for (var i = 0; i < words.length; i++) {
+                    splitLetters(words[i]);
+                }
+
+                function changeWord() {
+                    var cw = wordArray[currentWord];
+                    var nw = currentWord == words.length - 1 ? wordArray[0] : wordArray[currentWord + 1];
+                    for (var i = 0; i < cw.length; i++) {
+                        animateLetterOut(cw, i);
+                    }
+
+                    for (var i = 0; i < nw.length; i++) {
+                        nw[i].className = 'letter behind';
+                        nw[0].parentElement.style.opacity = 1;
+                        animateLetterIn(nw, i);
+                    }
+
+                    currentWord = (currentWord == wordArray.length - 1) ? 0 : currentWord + 1;
+                }
+
+                function animateLetterOut(cw, i) {
+                    setTimeout(function () {
+                        cw[i].className = 'letter out';
+                    }, i * 80);
+                }
+
+                function animateLetterIn(nw, i) {
+                    setTimeout(function () {
+                        nw[i].className = 'letter in';
+                    }, 340 + (i * 80));
+                }
+
+                function splitLetters(word) {
+                    var content = word.innerHTML;
+                    word.innerHTML = '';
+                    var letters = [];
+                    for (var i = 0; i < content.length; i++) {
+                        var letter = document.createElement('h2');
+                        letter.className = 'letter';
+                        letter.innerHTML = content.charAt(i);
+                        word.appendChild(letter);
+                        letters.push(letter);
+                    }
+
+                    wordArray.push(letters);
+                }
+
+                changeWord();
+                setInterval(changeWord, 4000);
+
+
+            </script>
+        </div>
+    </section>
+
+}

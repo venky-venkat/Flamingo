@@ -1,0 +1,79 @@
+﻿@model Flamingo.Models.ResponsesModel
+<div id="contactModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        @using (Ajax.BeginForm("SendMail", "Home", new AjaxOptions { HttpMethod = "Post", InsertionMode = InsertionMode.Replace, UpdateTargetId = "main-body" }))
+        {
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                </div>
+
+                <div id="main-body">
+                    <div id="modal-body" class="modal-body">
+
+                        <div class="row align-items-center">
+                            <div class="col-lg-12">
+                                <div class="contact-form">
+                                    <form id="contactForm">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="form-group">
+                                                    <input type="text" name="name" id="name" class="form-control" required data-error="Please enter your name" placeholder="Your Name">
+                                                    <div class="help-block with-errors"></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-12">
+                                                <div class="form-group">
+                                                    <input type="email" name="email" id="email" class="form-control" required data-error="Please enter your email" placeholder="Your Email">
+                                                    <div class="help-block with-errors"></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-12">
+                                                <div class="form-group">
+                                                    <input type="text" name="mobile" id="mobile" required data-error="Please enter your number" class="form-control" placeholder="Your Phone">
+                                                    <div class="help-block with-errors"></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-12">
+                                                <div class="form-group">
+                                                    <input type="text" name="subject" id="subject" class="form-control" required data-error="Please enter your subject" placeholder="Your Subject">
+                                                    <div class="help-block with-errors"></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-12">
+                                                <div class="form-group">
+                                                    <textarea name="message" class="form-control" id="msg" cols="30" rows="5" required data-error="Write your message" placeholder="Your Message"></textarea>
+                                                    <div class="help-block with-errors"></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-12">
+
+                                                <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="default-btn btn-two">
+                            <span class="label">Send Message</span>
+                            <i class='bx bx-plus'></i>
+                        </button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    </div>
